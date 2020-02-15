@@ -15,7 +15,9 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs --next",
+    "compile": "stencil build --docs --next",
+    "copy": "cp src/_headers www",
+    "build": "run-s compile copy",
     "start": "stencil build --dev --watch --serve --next",
     "test": "stencil test --spec",
     "test.watch": "stencil test --spec --watchAll",
@@ -27,6 +29,7 @@
     "@types/puppeteer": "1.19.0",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
+    "npm-run-all": "^4.1.5",
     "puppeteer": "2.1.0"
   },
   "license": "MIT"
