@@ -21,7 +21,6 @@ export class Users {
   public render() {
     return (
       <Host>
-        <h3>List of Users</h3>
         <ul>
           {this.users.map(user => (
             <li>
