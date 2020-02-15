@@ -9,6 +9,6 @@ ul {
 
 li {
   padding: 5px 10px;
-  background-color: var(--theme-background, #eeeeee);
+  background-color: var(--theme-background, #ffffff);
   border: 1px solid var(--theme-border, #dddddd);
 }

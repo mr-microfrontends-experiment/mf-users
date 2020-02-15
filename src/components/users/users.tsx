@@ -24,7 +24,7 @@ export class Users {
         <ul>
           {this.users.map(user => (
             <li>
-              {user.name} &lt;{user.email}&gt;
+              <strong>{user.name}</strong> &lt;{user.email}&gt;
             </li>
           ))}
         </ul>
