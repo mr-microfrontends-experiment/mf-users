@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 5px 10px;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+}
