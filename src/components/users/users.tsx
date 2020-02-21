@@ -24,7 +24,11 @@ export class Users {
   public render() {
     return (
       <Host>
-        <mf-list formatter={this.formatter} items={this.users} onOutClickedItem={this.handleItemClicked}></mf-list>
+        <mf-list
+          formatter={this.formatter}
+          items={this.users}
+          onOutClickedItem={event => this.handleItemClicked(event)}
+        ></mf-list>
       </Host>
     );
   }
