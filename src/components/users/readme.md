@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Events
+
+| Event            | Description | Type               |
+| ---------------- | ----------- | ------------------ |
+| `outClickedItem` |             | `CustomEvent<any>` |
+
+
 ## Dependencies
 
 ### Depends on

@@ -22,6 +22,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MfUsers {
+        "onOutClickedItem"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "mf-users": MfUsers;
