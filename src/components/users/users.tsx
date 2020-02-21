@@ -1,4 +1,4 @@
-import { Component, Host, h, State, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, State } from '@stencil/core';
 import { User } from '../../models/user.interface';
 
 import 'mf-components';
@@ -10,7 +10,6 @@ import 'mf-components';
 })
 export class Users {
   @State() private users: Array<User> = [];
-  @Event() public outClickedItem: EventEmitter;
 
   public async fetchUsers(): Promise<Array<User>> {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -24,11 +23,7 @@ export class Users {
   public render() {
     return (
       <Host>
-        <mf-list
-          formatter={this.formatter}
-          items={this.users}
-          onOutClickedItem={event => this.handleItemClicked(event)}
-        ></mf-list>
+        <mf-list formatter={this.formatter} items={this.users}></mf-list>
       </Host>
     );
   }
@@ -39,9 +34,5 @@ export class Users {
         <strong>{user.name}</strong> &lt;{user.email}&gt;
       </span>
     );
-  }
-
-  private handleItemClicked(event: CustomEvent<User>): void {
-    this.outClickedItem.emit(event.detail);
   }
 }
