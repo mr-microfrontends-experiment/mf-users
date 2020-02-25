@@ -23,7 +23,11 @@ export class Users {
   public render() {
     return (
       <Host>
-        <mf-list formatter={this.formatter} items={this.users}></mf-list>
+        {this.users.length > 0 ? (
+          <mf-list formatter={this.formatter} items={this.users}></mf-list>
+        ) : (
+          <div>loading...</div>
+        )}
       </Host>
     );
   }
