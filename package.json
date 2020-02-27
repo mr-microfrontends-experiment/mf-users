@@ -17,6 +17,7 @@
   "scripts": {
     "compile": "stencil build --docs --next",
     "copy": "cp src/_headers www",
+    "prebuild": "npm install",
     "build": "run-s compile copy",
     "start": "stencil build --dev --watch --serve --next",
     "test": "stencil test --spec",
@@ -34,6 +35,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "mf-components": "0.0.4"
+    "mf-components": "^0.1.1"
   }
 }
