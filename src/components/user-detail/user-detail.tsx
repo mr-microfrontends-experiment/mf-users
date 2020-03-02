@@ -13,17 +13,16 @@ export class UserDetail implements ComponentInterface {
 
   @Watch('userId')
   async watchUserId(newId: number): Promise<void> {
-    console.log('new ID', newId);
-
-    this.user = await this.fetchUser();
+    this.user = null;
+    this.user = await this.fetchUser(newId);
   }
 
-  public async fetchUser(): Promise<User | null> {
+  public async fetchUser(userId: number): Promise<User | null> {
     if (!this.userId) {
       return null;
     }
 
-    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${this.userId}`);
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
     return response.json();
   }
 
