@@ -11,10 +11,15 @@
   <body>
     <mf-users id="usersElement"></mf-users>
 
+    <mf-user-detail id="userDetailElement"></mf-user-detail>
+
     <script>
+      const userDetailElement = document.querySelector('#userDetailElement');
+
       const usersElement = document.querySelector('#usersElement');
       usersElement.addEventListener('outClickedItem', event => {
         console.log('Event', event.detail);
+        userDetailElement.userId = event.detail.id;
       });
     </script>
   </body>

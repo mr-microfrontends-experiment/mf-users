@@ -6,10 +6,19 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MfUserDetail {
+        "userId": number;
+    }
     interface MfUsers {
     }
 }
 declare global {
+    interface HTMLMfUserDetailElement extends Components.MfUserDetail, HTMLStencilElement {
+    }
+    var HTMLMfUserDetailElement: {
+        prototype: HTMLMfUserDetailElement;
+        new (): HTMLMfUserDetailElement;
+    };
     interface HTMLMfUsersElement extends Components.MfUsers, HTMLStencilElement {
     }
     var HTMLMfUsersElement: {
@@ -17,13 +26,18 @@ declare global {
         new (): HTMLMfUsersElement;
     };
     interface HTMLElementTagNameMap {
+        "mf-user-detail": HTMLMfUserDetailElement;
         "mf-users": HTMLMfUsersElement;
     }
 }
 declare namespace LocalJSX {
+    interface MfUserDetail {
+        "userId"?: number;
+    }
     interface MfUsers {
     }
     interface IntrinsicElements {
+        "mf-user-detail": MfUserDetail;
         "mf-users": MfUsers;
     }
 }
@@ -31,6 +45,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mf-user-detail": LocalJSX.MfUserDetail & JSXBase.HTMLAttributes<HTMLMfUserDetailElement>;
             "mf-users": LocalJSX.MfUsers & JSXBase.HTMLAttributes<HTMLMfUsersElement>;
         }
     }
